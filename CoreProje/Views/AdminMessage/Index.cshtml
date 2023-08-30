@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><a href="/AdminMessage/RecieverMessageList/" class="btn btn-lg btn-outline-success">Gelen Kutusu</a></th>
+                            <th> <a href="/AdminMessage/SenderMessageList/" class="btn btn-lg btn-outline-info">Gönderilen Kutusu</a></th>
+                            <th> <a href="/AdminMessage/AdminSendMessage/" class="btn btn-lg btn-outline-danger">+ Yeni Mesaj</a></th>
+                           @* <th>
+                                <a asp-for="AdminSendMessage" class="btn btn-lg btn-outline-danger">+ Yeni Mesaj</a>
+                            </th>*@
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>

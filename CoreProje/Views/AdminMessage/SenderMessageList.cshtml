@@ -1,0 +1,65 @@
+﻿@using EntityLayer.Concrete
+@model List<WriterMessage>
+@{
+    ViewData["Title"] = "SenderMessageList";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="sort">#</th>
+                            <th scope="col" class="sort">Alıcı</th>
+                            <th scope="col" class="sort">Konu</th>
+                            <th scope="col" class="sort">Tarih</th>
+                            <th scope="col">Sil</th>
+                            <th scope="col" class="sort">Mesajı Gör</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="list">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th>
+                                    @item.WriterMessageID
+                                </th>
+                                <td class="budget">
+                                    @item.RecieverName
+                                </td>
+                                <td class="budget">
+                                    @item.Subject
+                                </td>
+                                <td class="budget">
+                                    @item.Date.ToShortDateString()
+                                </td>
+                                <td>
+                                    <a href="/AdminMessage/DeleteAdminMessage/@item.WriterMessageID" class="btn btn-sm btn-outline-danger" id="DeleteBtn"
+                                   onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
+                                </td>
+                                <td>
+                                    <a href="/AdminMessage/AdminMessageDetails/@item.WriterMessageID" class="btn btn-sm btn-outline-success">Mesajı Gör</a>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+          
+        </div>
+        <div class="container">
+            <div>
+                <a href="/AdminMessage/Index/" class="btn  btn-outline-info"><i class="mdi mdi-arrow-left"></i> Geri Dön</a>
+            </div>
+            
+        </div>
+    </div>
+  
+
+</div>
+

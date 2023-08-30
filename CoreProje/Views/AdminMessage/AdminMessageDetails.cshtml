@@ -1,0 +1,34 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="container">
+
+    @Html.HiddenFor(x=>x.WriterMessageID)
+    <br />
+    @Html.Label("Konu")
+    @Html.TextBoxFor(x=>x.Subject, new {@class = "form-control text-white"})
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x=>x.Date, new {@class = "form-control text-white"})
+    <br />
+    @Html.Label("Gönderen İsim")
+    @Html.TextBoxFor(x=>x.SenderName, new {@class = "form-control text-white"})
+    <br />
+    @Html.Label("Gönderen Mail")
+    @Html.TextBoxFor(x=>x.Sender, new {@class = "form-control text-white"})
+    <br />
+    @Html.Label("Alıcı Mail")
+    @Html.TextBoxFor(x=>x.Reciever, new {@class = "form-control text-white"})
+    <br />
+    @Html.Label("Alıcı İsim")
+    @Html.TextBoxFor(x=>x.RecieverName, new {@class = "form-control text-white"})
+    <br />
+    @Html.Label("Mesaj")
+    @Html.TextAreaFor(x=>x.MessageContent,10,3, new {@class = "form-control text-white"})
+    <br />
+    <a href="/AdminMessage/Index/" class="btn btn-success"><i class="mdi mdi-arrow-left"></i> Geri Dön</a>
+</div>
+

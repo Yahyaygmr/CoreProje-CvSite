@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "EditPortfolio";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("EditPortfolio", "Portfolio", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.PortdolioID)
+    <br />
+    @Html.Label("Proje Başlığı")
+    @Html.TextBoxFor(x=>x.Name, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.Name)
+    <br />
+    @Html.Label("Görsel 1")
+    @Html.TextBoxFor(x=>x.ImageUrl, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.ImageUrl)
+    <br />
+    @Html.Label("Görsel 2")
+    @Html.TextBoxFor(x=>x.ImageUrl2, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.ImageUrl2)
+    <br />
+    @Html.Label("Proje Url")
+    @Html.TextBoxFor(x=>x.ProjectUrl, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.ProjectUrl)
+    <br />
+    @Html.Label("Fiyat")
+    @Html.TextBoxFor(x=>x.Price, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.Price)
+    <br />
+    @Html.Label("Tamamlanma Oranı")
+    @Html.TextBoxFor(x=>x.value, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.value)
+    <br />
+    @Html.Label("Platform")
+    @Html.TextBoxFor(x=>x.Platform, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.Platform)
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+}
